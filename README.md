@@ -4,7 +4,7 @@ Recent investigations of lower limb injuries among football athletes have indica
 The goal of this project is to investigate the relationship between the playing surface and the injury and performance of National Football League (NFL) athletes and to examine factors that may contribute to lower extremity injuries. In the NFL, 12 stadiums have fields with synthetic turf.
 
 ## 2. Exploratory Data Analysis (EDA)
-This section focuses on understanding the structure, quality, and scope of the data three datasets - 
+This section focused on understanding the structure, quality, and scope of three datasets - 
 * Injury Record: The injury record file in .csv format contains information on 105 lower-limb injuries that occurred during regular season games over the two seasons. Injuries can be linked to specific records in a player history using the PlayerKey, GameID, and PlayKey fields.
 
 * Play List: – The play list file contains the details for the 267,005 player-plays that make up the dataset. Each play is indexed by PlayerKey, GameID, and PlayKey fields. Details about the game and play include the player’s assigned roster position, stadium type, field type, weather, play type, position for the play, and position group.
@@ -21,15 +21,29 @@ A variety of visualizations were generated to showcase relationships between pla
 <img width="1251" height="702" alt="image" src="https://github.com/user-attachments/assets/4a047985-82e6-466d-a9f0-6c140ba32888" />
 <img width="740" height="451" alt="image" src="https://github.com/user-attachments/assets/32b283fa-ffdf-4711-a3e1-4e0f02cc2932" />
 
-
 ## 4. Statistical Analysis of Player Injuries
-This section transitions from visual insights to quantitative analysis of player injury. After preparing modeling-ready datasets, correlations are examined between injuries and environmental factors like temperature and stadium type, as well as play characteristics and cumulative workload. A formal hypothesis testing was used to evaluate whether injury risk differs significantly between natural grass and synthetic turf, providing statistical backing for observed trends.
+This section transitions from visual insights to quantitative analysis of player injury. After preparing modeling-ready datasets, correlations are examined between injuries and environmental factors like temperature and stadium type, as well as number of games played and play types. However, no significant correlations were found. 
+
+Hypothesis testing was also used to evaluate whether injury risk differs significantly between natural grass and synthetic turf; resulting in not rejecting the null hypothesis: 
+The likelihood of a player experiencing an injury on natural grass is less than or equal to the probability of the injury on synthetic turf.
 
 ## 4. Machine Learning – Predicting Player Injury
-A predictive modeling pipeline was developed to estimate the likelihood of player injury. Features are engineered from gameplay, environmental conditions, and player usage. Due to the fact that injuries are relatively rare events, resampling techniques are applied to address class imbalance. An XGBoost classifier is trained and evaluated, and feature importance analysis highlights which variables contribute most strongly to injury prediction.
+A predictive modeling pipeline was developed to estimate the likelihood of player injury and to determine importatnt features that contribute to it. First the merged injury and plays list datasets were split into training and test using a stratified fold method to evenly distribute class labels. Following this the data was resampled due to the fact that injuries are relatively rare events, the model was trained using XGB Boost classifier. Despite having underperformed it was used to determine feature importance, which represent environmental conditions, player usage etc. The following shows the most important of these features. 
+
+<img width="1610" height="849" alt="image" src="https://github.com/user-attachments/assets/85e2e23d-557b-4a10-ba6a-ec3203d57951" />
 
 ## 5. Synthetic vs Natural Turf Analysis
-This focused section dives deeper into how turf type interacts with other conditions. It compares injury rates on natural and synthetic surfaces under varying weather and temperature scenarios, including specific hypothesis tests for rainy conditions. The analysis also examines whether certain player positions are more affected by synthetic turf, helping clarify how surface type and context combine to influence injury risk.
+After learning that the hypothesis that there is a statistical backing that injuries are more likely to occur on synthetic turf, this section dived deeper into how turf type interacts with other conditions. It compares injury rates on natural and synthetic surfaces under varying weather and temperature scenarios, including specific hypothesis tests for rainy conditions. The analysis also examines whether certain player positions are more affected by synthetic turf, helping clarify how surface type and context combine to influence injury risk. This analysis showed that the position of defensive back experiences injury at a far greater rate when compared to other positions stratified into natural vs synthetic turf.
+
+<img width="1251" height="702" alt="image" src="https://github.com/user-attachments/assets/f5aef7a3-8476-4125-9680-3039919d4f91" />
+
 
 ## 7. Conclusion
-The project concludes by summarizing key findings from the visual, statistical, and machine learning analyses. It highlights the environmental and gameplay factors most associated with injuries and discusses how these insights could inform player safety strategies, field management decisions, and future research into injury prevention.
+The goal of this analysis was determine if there is a relationship between the playing surface and the injury/performance of National Football League (NFL) athletes and to examine factors that may contribute to lower extremity injuries. In the NFL, 12 stadiums have fields with synthetic turf.
+
+The conclusions drawn from this analysis are as follows:
+* There is a higher risk of injury when playing on the synthetic turf in all conditions except rain
+* Defensive Backs tend to be at the highest risk of injury on synthetic turf
+* A temperature increase is not related to an increased risk of injury
+
+In the future, it would potentially of value to explore how player movements effect the likelihood of injury on the field.
