@@ -3,12 +3,18 @@ Recent investigations of lower limb injuries among football athletes have indica
 
 The goal of this project is to investigate the relationship between the playing surface and the injury and performance of National Football League (NFL) athletes and to examine factors that may contribute to lower extremity injuries. In the NFL, 12 stadiums have fields with synthetic turf.
 
-
 ## 2. Exploratory Data Analysis (EDA)
-This section focuses on understanding the structure, quality, and scope of the data. It identifies the number of unique players, games, and plays, then reshapes the data into a cleaner game-level format. Environmental variables such as stadium type, temperature, and weather conditions are standardized and cleaned to ensure consistency. These steps prepare the dataset for reliable visualization and modeling.
+This section focuses on understanding the structure, quality, and scope of the data three datasets - 
+* Injury Record: The injury record file in .csv format contains information on 105 lower-limb injuries that occurred during regular season games over the two seasons. Injuries can be linked to specific records in a player history using the PlayerKey, GameID, and PlayKey fields.
+
+* Play List: – The play list file contains the details for the 267,005 player-plays that make up the dataset. Each play is indexed by PlayerKey, GameID, and PlayKey fields. Details about the game and play include the player’s assigned roster position, stadium type, field type, weather, play type, position for the play, and position group.
+
+* Player Track Data: player level data that describes the location, orientation, speed, and direction of each player during a play recorded at 10 Hz (i.e. 10 observations recorded per second).
+
+Insights such as the number of unique players, games, and plays, then reshapes the data into a cleaner game-level format. Environmental variables such as stadium type, temperature, and weather conditions are standardized and cleaned to ensure consistency. These steps prepare the dataset for reliable visualization and modeling.
 
 ## 3. Visualizations
-A variety of visualizations are used to reveal patterns in gameplay and injuries. The analysis looks at how games are distributed across different environments and weather conditions, how player workload varies by position, and how different play types are represented. Spatial heatmaps show where players spend the most time on the field and where injuries most frequently occur. Additional plots explore injury counts, injury locations, and player timelines leading up to injury events, providing intuitive visual context for later statistical findings.
+A variety of visualizations were generated to showcase relationships between player injury and a variety of factors such as environmental, play types, etc. Spatial heatmaps show where players spend the most time on the field and where injuries most frequently occur. Additional plots explore injury counts, injury locations, and player timelines leading up to injury events, providing intuitive visual context for later statistical findings.
 <img width="468" height="208" alt="image" src="https://github.com/user-attachments/assets/f164d68e-95fc-4b58-bb05-6ae407edcca9" />
 <img width="468" height="185" alt="image" src="https://github.com/user-attachments/assets/fc47fd07-9141-44b9-81c9-8b820e55c2d7" />
 <img width="327" height="217" alt="image" src="https://github.com/user-attachments/assets/c1632b84-b99a-43ed-9ebd-affc39edd31f" />
@@ -17,13 +23,12 @@ A variety of visualizations are used to reveal patterns in gameplay and injuries
 
 
 ## 4. Statistical Analysis of Player Injuries
-This section transitions from visual insights to quantitative analysis. After preparing modeling-ready datasets, correlations are examined between injuries and environmental factors like temperature and stadium type, as well as play characteristics and cumulative workload. Formal hypothesis testing is used to evaluate whether injury risk differs significantly between natural grass and synthetic turf, providing statistical backing for observed trends.
+This section transitions from visual insights to quantitative analysis of player injury. After preparing modeling-ready datasets, correlations are examined between injuries and environmental factors like temperature and stadium type, as well as play characteristics and cumulative workload. A formal hypothesis testing was used to evaluate whether injury risk differs significantly between natural grass and synthetic turf, providing statistical backing for observed trends.
 
 ## 4. Machine Learning – Predicting Player Injury
-A predictive modeling pipeline is developed to estimate the likelihood of player injury. Features are engineered from gameplay, environmental conditions, and player usage. Because injuries are relatively rare events, resampling techniques are applied to address class imbalance. An XGBoost classifier is trained and evaluated, and feature importance analysis highlights which variables contribute most strongly to injury prediction.
+A predictive modeling pipeline was developed to estimate the likelihood of player injury. Features are engineered from gameplay, environmental conditions, and player usage. Due to the fact that injuries are relatively rare events, resampling techniques are applied to address class imbalance. An XGBoost classifier is trained and evaluated, and feature importance analysis highlights which variables contribute most strongly to injury prediction.
 
 ## 5. Synthetic vs Natural Turf Analysis
-
 This focused section dives deeper into how turf type interacts with other conditions. It compares injury rates on natural and synthetic surfaces under varying weather and temperature scenarios, including specific hypothesis tests for rainy conditions. The analysis also examines whether certain player positions are more affected by synthetic turf, helping clarify how surface type and context combine to influence injury risk.
 
 ## 7. Conclusion
