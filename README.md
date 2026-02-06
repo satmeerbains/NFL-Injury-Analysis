@@ -10,6 +10,10 @@ This section focuses on understanding the structure, quality, and scope of the d
 ## 3. Visualizations
 A variety of visualizations are used to reveal patterns in gameplay and injuries. The analysis looks at how games are distributed across different environments and weather conditions, how player workload varies by position, and how different play types are represented. Spatial heatmaps show where players spend the most time on the field and where injuries most frequently occur. Additional plots explore injury counts, injury locations, and player timelines leading up to injury events, providing intuitive visual context for later statistical findings.
 <img width="468" height="208" alt="image" src="https://github.com/user-attachments/assets/f164d68e-95fc-4b58-bb05-6ae407edcca9" />
+<img width="468" height="185" alt="image" src="https://github.com/user-attachments/assets/fc47fd07-9141-44b9-81c9-8b820e55c2d7" />
+<img width="327" height="217" alt="image" src="https://github.com/user-attachments/assets/c1632b84-b99a-43ed-9ebd-affc39edd31f" />
+<img width="1251" height="702" alt="image" src="https://github.com/user-attachments/assets/4a047985-82e6-466d-a9f0-6c140ba32888" />
+<img width="740" height="451" alt="image" src="https://github.com/user-attachments/assets/32b283fa-ffdf-4711-a3e1-4e0f02cc2932" />
 
 
 ## 4. Statistical Analysis of Player Injuries
